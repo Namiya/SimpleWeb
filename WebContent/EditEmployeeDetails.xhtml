@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+	<ui:composition template="/WEB-INF//templates/common.xhtml">
+		<ui:define name="content">
+			<f:metadata>
+				<f:viewParam name="id" value="#{editDetails.id}"/>
+			</f:metadata>
+		    	<h2>Employee Details </h2>
+		    	<h:form id="form">
+	    		<h:panelGrid columns="2" columnClasses="titleCell">
+	                <h:outputLabel for="name" value="Employee Name:" />
+	                <h:inputText id="name" value="#{editDetails.name}" />
+	                
+	                <h:outputLabel for="id" value="Employee ID:" />
+	                <h:outputText id="id" value="#{editDetails.id}" />
+	                
+	                <h:outputLabel for="email" value="Employee Email:" />
+	                <h:inputText id="email" value="#{editDetails.email}" />
+	                     
+	            </h:panelGrid>
+	    		
+	    		<p>
+	                <h:panelGrid columns="1">
+	                	
+	                    <h:commandButton id="Done"
+	                    action="#{editDetails.onButtonDone()}"                 
+	                    value="Done" styleClass="search" />
+	                </h:panelGrid>
+	            </p>
+			</h:form>
+		</ui:define>	
+	</ui:composition>
+
+</html>
